@@ -1,0 +1,9 @@
+1. HTTP 200 - Danh sach bai tap dang mo:
+- 1: Bai tap REST API
+- 2: Bai tap Client
+2. HTTP 201 - Da tao luot nop: 57b169fe-d51c-4e96-b785-d5566950f361; trang thai: received
+Location: /api/submissions/57b169fe-d51c-4e96-b785-d5566950f361
+3. HTTP 200 - Doc lai luot nop: SV001 - https://example.com/sv001/rest-api
+4. Thu gui yeu cau loi:
+HTTP 400 BadRequest
+INVALID_SUBMISSION: Thieu ma sinh vien hoac kho ma nguon.

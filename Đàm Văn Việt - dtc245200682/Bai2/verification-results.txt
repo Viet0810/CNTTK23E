@@ -1,3 +1,6 @@
+Bai 2 - verification at 2026-11-18T11:12:54+07:00
+Student: Dam Van Viet - dtc245200682
+SDK: 10.0.403
 GET / -> 200
 GET /api/products -> 200
 GET /api/products/1 -> 200
@@ -7,43 +10,63 @@ POST /api/products -> 201
 GET /api/products/4 -> 200
 POST /api/products -> 400 INVALID_PRODUCT
 POST /api/products -> 415
+GET / -> 200
+GET /api/products -> 200
+GET /api/products/1 -> 200
+GET /api/products/999 -> 404 PRODUCT_NOT_FOUND
+GET /api/products/abc -> 404
+POST /api/products -> 201
+POST /api/products -> 400 INVALID_PRODUCT
+POST /api/products -> 415
+CatalogApi\requests.http: 8/8 requests PASS
 
 Catalog client lan 1
-1. Danh sach san pham:
+1. HTTP 200 - Danh sach san pham:
 [1] Giao trinh Lap trinh phan tan - 150,000 VND
 [2] Tai lieu RESTful API - 90,000 VND
 [3] Bai tap thuc hanh .NET - 120,000 VND
 [4] Lap trinh gRC - 80,000 VND
-2. Da tao: [5] Nhap mon REST API; Location: /api/products/5
-3. Doc lai: [5] Nhap mon REST API
+[5] Lap trinh gRC - 80,000 VND
+2. HTTP 201 - Da tao: [6] Nhap mon REST API; Location: /api/products/6
+3. HTTP 200 - Doc lai: [6] Nhap mon REST API
 4. Thu gui du lieu sai:
 HTTP 400 BadRequest
 INVALID_PRODUCT: Ten san pham khong duoc de trong va gia phai lon hon 0
 
 
 Catalog client lan 2
-1. Danh sach san pham:
+1. HTTP 200 - Danh sach san pham:
 [1] Giao trinh Lap trinh phan tan - 150,000 VND
 [2] Tai lieu RESTful API - 90,000 VND
 [3] Bai tap thuc hanh .NET - 120,000 VND
 [4] Lap trinh gRC - 80,000 VND
-[5] Nhap mon REST API - 120,000 VND
-2. Da tao: [6] Nhap mon REST API; Location: /api/products/6
-3. Doc lai: [6] Nhap mon REST API
+[5] Lap trinh gRC - 80,000 VND
+[6] Nhap mon REST API - 120,000 VND
+2. HTTP 201 - Da tao: [7] Nhap mon REST API; Location: /api/products/7
+3. HTTP 200 - Doc lai: [7] Nhap mon REST API
 4. Thu gui du lieu sai:
 HTTP 400 BadRequest
 INVALID_PRODUCT: Ten san pham khong duoc de trong va gia phai lon hon 0
 
 Catalog: API tat -> client bao Loi ket noi (exit 1)
+Loi ket noi: No connection could be made because the target machine actively refused it. (localhost:15100)
+Catalog: sai cong 15999 -> client bao Loi ket noi (exit 1)
 GET /api/products -> 200
 Catalog: khoi dong lai -> du lieu RAM duoc reset
+Catalog.Client: test server HTTP 404, body='' -> exit 1; HTTP 404 NotFound
+Phan hoi khong co body JSON.
+Catalog.Client: test server HTTP 500, body='{"code":"SERVER_ERROR","message":"Test error"}' -> exit 1; HTTP 500 InternalServerError
+SERVER_ERROR: Test error
+Catalog.Client: test server HTTP 200, body='{broken' -> exit 1; JSON tu API khong dung hop dong: The JSON value could not be converted to System.Collections.Generic.List`1[ProductDto]. Path: $ | LineNumber: 0 | BytePositionInLine: 1.
+Catalog.Client: test server HTTP 200, body='null' -> exit 1; Loi hop dong API: API tra danh sach null.
+Catalog.Client: invalid URL -> exit 1; URL API phai la dia chi HTTP/HTTPS tuyet doi.
 GET / -> 200
 GET /api/assignments -> 200
 GET /api/assignments/1 -> 200
 GET /api/assignments/999 -> 404 ASSIGNMENT_NOT_FOUND
 GET /api/assignments/abc -> 404
 POST /api/assignments/1/submissions -> 201
-GET /api/submissions/fabc95ed-2291-45ef-89e0-308f73b24be3 -> 200
+GET /api/submissions/51f7af44-ad62-4708-b383-42bb23dcea7c -> 200
 POST /api/assignments/1/submissions -> 400 INVALID_SUBMISSION
 POST /api/assignments/1/submissions -> 400 INVALID_SUBMISSION
 POST /api/assignments/3/submissions -> 400 ASSIGNMENT_CLOSED
@@ -52,30 +75,67 @@ POST /api/assignments/1/submissions -> 415
 POST /api/assignments/1/submissions -> 400
 PUT /api/assignments/1 -> 405
 GET /api/submissions/00000000-0000-0000-0000-000000000000 -> 404 SUBMISSION_NOT_FOUND
+POST /api/assignments/1/submissions -> 400 INVALID_SUBMISSION
+POST /api/assignments/1/submissions -> 400 INVALID_SUBMISSION
+POST /api/assignments/999/submissions -> 404 ASSIGNMENT_NOT_FOUND
+POST /api/assignments/3/submissions -> 400 ASSIGNMENT_CLOSED
+GET /api/assignments -> 200
+GET /api/assignments/1 -> 200
+GET /api/assignments/999 -> 404 ASSIGNMENT_NOT_FOUND
+POST /api/assignments/1/submissions -> 201
+GET /api/submissions/a52e1040-b360-4475-b429-1f5c4f2baa5f -> 200
+POST /api/assignments/1/submissions -> 400 INVALID_SUBMISSION
+GET /api/submissions/00000000-0000-0000-0000-000000000000 -> 404 SUBMISSION_NOT_FOUND
+requests.http: 7/7 requests PASS
+GET /api/assignments -> 200
+GET /api/assignments/1 -> 200
+GET /api/assignments/999 -> 404
+POST /api/assignments/1/submissions -> 201
+GET /api/submissions/cd5e0de2-19fb-4112-b4bd-195de795ae6a -> 200
+POST /api/assignments/1/submissions -> 400 INVALID_SUBMISSION
+GET /api/submissions/00000000-0000-0000-0000-000000000000 -> 404
+POST /api/assignments/3/submissions -> 400 ASSIGNMENT_CLOSED
+POST /api/assignments/999/submissions -> 404 ASSIGNMENT_NOT_FOUND
+POST /api/assignments/1/submissions -> 415
+POST /api/assignments/1/submissions -> 400
+POST /api/assignments/1/submissions -> 400 INVALID_SUBMISSION
+PUT /api/assignments/1 -> 405
+GET /api/assignments/abc -> 404
+RestfulClientServer\requests.http: 14/14 requests PASS
 
 Submission client lan 1
-1. Danh sach bai tap dang mo:
+1. HTTP 200 - Danh sach bai tap dang mo:
 - 1: Bai tap REST API
 - 2: Bai tap Client
-2. Da tao luot nop: 59606feb-d847-4eb3-bd29-853826183994; trang thai: received
-Location: /api/submissions/59606feb-d847-4eb3-bd29-853826183994
-3. Doc lai luot nop: SV001 - https://example.com/sv001/rest-api
+2. HTTP 201 - Da tao luot nop: 298a1e85-1fe2-41de-abc5-0f13049d3af0; trang thai: received
+Location: /api/submissions/298a1e85-1fe2-41de-abc5-0f13049d3af0
+3. HTTP 200 - Doc lai luot nop: SV001 - https://example.com/sv001/rest-api
 4. Thu gui yeu cau loi:
 HTTP 400 BadRequest
 INVALID_SUBMISSION: Thieu ma sinh vien hoac kho ma nguon.
 
 
 Submission client lan 2
-1. Danh sach bai tap dang mo:
+1. HTTP 200 - Danh sach bai tap dang mo:
 - 1: Bai tap REST API
 - 2: Bai tap Client
-2. Da tao luot nop: c8c344e3-f675-4bfd-b7eb-a7dc72a50d8d; trang thai: received
-Location: /api/submissions/c8c344e3-f675-4bfd-b7eb-a7dc72a50d8d
-3. Doc lai luot nop: SV001 - https://example.com/sv001/rest-api
+2. HTTP 201 - Da tao luot nop: 57b169fe-d51c-4e96-b785-d5566950f361; trang thai: received
+Location: /api/submissions/57b169fe-d51c-4e96-b785-d5566950f361
+3. HTTP 200 - Doc lai luot nop: SV001 - https://example.com/sv001/rest-api
 4. Thu gui yeu cau loi:
 HTTP 400 BadRequest
 INVALID_SUBMISSION: Thieu ma sinh vien hoac kho ma nguon.
 
 Submission: API tat -> client bao Loi ket noi (exit 1)
-GET /api/submissions/fabc95ed-2291-45ef-89e0-308f73b24be3 -> 404 SUBMISSION_NOT_FOUND
+Loi ket noi: No connection could be made because the target machine actively refused it. (localhost:15000)
+Submission: sai cong 15999 -> client bao Loi ket noi (exit 1)
+GET /api/submissions/51f7af44-ad62-4708-b383-42bb23dcea7c -> 404 SUBMISSION_NOT_FOUND
 Submission: khoi dong lai -> du lieu RAM duoc reset
+Submission.Client: test server HTTP 404, body='' -> exit 1; HTTP 404 NotFound
+Phan hoi khong co body JSON.
+Submission.Client: test server HTTP 500, body='{"code":"SERVER_ERROR","message":"Test error"}' -> exit 1; HTTP 500 InternalServerError
+SERVER_ERROR: Test error
+Submission.Client: test server HTTP 200, body='{broken' -> exit 1; JSON tu API khong dung hop dong: The JSON value could not be converted to System.Collections.Generic.List`1[AssignmentDto]. Path: $ | LineNumber: 0 | BytePositionInLine: 1.
+Submission.Client: test server HTTP 200, body='null' -> exit 1; Loi hop dong API: API tra danh sach null.
+Submission.Client: invalid URL -> exit 1; URL API phai la dia chi HTTP/HTTPS tuyet doi.
+PASS: 59 HTTP assertions; 29 checked-in HTTP requests; 4 complete client runs; 2 stopped-API, 2 wrong-port, 10 client error cases; 2 RAM reset checks.

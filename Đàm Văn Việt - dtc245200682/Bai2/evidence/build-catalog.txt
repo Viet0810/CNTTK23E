@@ -1,0 +1,11 @@
+  Determining projects to restore...
+  Restored D:\ptudpt\bai2\review-repo\Đàm Văn Việt - dtc245200682\Bai2\CatalogApi\src\Catalog.Api\Catalog.Api.csproj (in 98 ms).
+  Restored D:\ptudpt\bai2\review-repo\Đàm Văn Việt - dtc245200682\Bai2\CatalogApi\src\Catalog.Client\Catalog.Client.csproj (in 98 ms).
+  Catalog.Client -> D:\ptudpt\bai2\review-repo\Đàm Văn Việt - dtc245200682\Bai2\CatalogApi\src\Catalog.Client\bin\Debug\net10.0\Catalog.Client.dll
+  Catalog.Api -> D:\ptudpt\bai2\review-repo\Đàm Văn Việt - dtc245200682\Bai2\CatalogApi\src\Catalog.Api\bin\Debug\net10.0\Catalog.Api.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:04.08

@@ -1,0 +1,23 @@
+<!doctype html><html lang="vi"><meta charset="utf-8"><title>Kiểm chứng lỗi và thí nghiệm phân tán</title><style>body{margin:36px;font:18px Segoe UI,Arial;background:#f1f5f9;color:#172033}
+h1{font-size:30px;margin-bottom:8px}h2{font-size:22px;margin:0 0 16px}
+section{background:white;border:1px solid #cbd5e1;border-radius:12px;padding:24px;margin:20px 0}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;font:16px Consolas,monospace;line-height:1.5;margin:0}
+table{border-collapse:collapse;width:100%;background:white;font-size:17px}
+th,td{border:1px solid #cbd5e1;padding:9px;text-align:left}th{background:#dbeafe}
+.meta{color:#475569}.ok{color:#166534;font-weight:700}</style><h1>Kiểm chứng lỗi và thí nghiệm phân tán</h1><p class="meta">Đàm Văn Việt · dtc245200682 · 2026-11-18T11:12:54+07:00<br>Báo cáo từ log chạy thực tế; dữ liệu gốc được lưu cùng thư mục evidence.</p><section><h2>Kết quả thực tế</h2><pre>Catalog: API tat -&gt; client bao Loi ket noi (exit 1)
+Catalog: sai cong 15999 -&gt; client bao Loi ket noi (exit 1)
+Catalog: khoi dong lai -&gt; du lieu RAM duoc reset
+Catalog.Client: test server HTTP 404, body=&#x27;&#x27; -&gt; exit 1; HTTP 404 NotFound
+Catalog.Client: test server HTTP 500, body=&#x27;{&quot;code&quot;:&quot;SERVER_ERROR&quot;,&quot;message&quot;:&quot;Test error&quot;}&#x27; -&gt; exit 1; HTTP 500 InternalServerError
+Catalog.Client: test server HTTP 200, body=&#x27;{broken&#x27; -&gt; exit 1; JSON tu API khong dung hop dong: The JSON value could not be converted to System.Collections.Generic.List`1[ProductDto]. Path: $ | LineNumber: 0 | BytePositionInLine: 1.
+Catalog.Client: test server HTTP 200, body=&#x27;null&#x27; -&gt; exit 1; Loi hop dong API: API tra danh sach null.
+Catalog.Client: invalid URL -&gt; exit 1; URL API phai la dia chi HTTP/HTTPS tuyet doi.
+Submission: API tat -&gt; client bao Loi ket noi (exit 1)
+Submission: sai cong 15999 -&gt; client bao Loi ket noi (exit 1)
+Submission: khoi dong lai -&gt; du lieu RAM duoc reset
+Submission.Client: test server HTTP 404, body=&#x27;&#x27; -&gt; exit 1; HTTP 404 NotFound
+Submission.Client: test server HTTP 500, body=&#x27;{&quot;code&quot;:&quot;SERVER_ERROR&quot;,&quot;message&quot;:&quot;Test error&quot;}&#x27; -&gt; exit 1; HTTP 500 InternalServerError
+Submission.Client: test server HTTP 200, body=&#x27;{broken&#x27; -&gt; exit 1; JSON tu API khong dung hop dong: The JSON value could not be converted to System.Collections.Generic.List`1[AssignmentDto]. Path: $ | LineNumber: 0 | BytePositionInLine: 1.
+Submission.Client: test server HTTP 200, body=&#x27;null&#x27; -&gt; exit 1; Loi hop dong API: API tra danh sach null.
+Submission.Client: invalid URL -&gt; exit 1; URL API phai la dia chi HTTP/HTTPS tuyet doi.
+PASS: 59 HTTP assertions; 29 checked-in HTTP requests; 4 complete client runs; 2 stopped-API, 2 wrong-port, 10 client error cases; 2 RAM reset checks.</pre></section></html>

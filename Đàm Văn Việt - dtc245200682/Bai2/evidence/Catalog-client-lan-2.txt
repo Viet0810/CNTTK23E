@@ -1,0 +1,12 @@
+1. HTTP 200 - Danh sach san pham:
+[1] Giao trinh Lap trinh phan tan - 150,000 VND
+[2] Tai lieu RESTful API - 90,000 VND
+[3] Bai tap thuc hanh .NET - 120,000 VND
+[4] Lap trinh gRC - 80,000 VND
+[5] Lap trinh gRC - 80,000 VND
+[6] Nhap mon REST API - 120,000 VND
+2. HTTP 201 - Da tao: [7] Nhap mon REST API; Location: /api/products/7
+3. HTTP 200 - Doc lai: [7] Nhap mon REST API
+4. Thu gui du lieu sai:
+HTTP 400 BadRequest
+INVALID_PRODUCT: Ten san pham khong duoc de trong va gia phai lon hon 0

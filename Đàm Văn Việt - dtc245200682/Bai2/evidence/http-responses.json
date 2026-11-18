@@ -1,0 +1,826 @@
+{
+  "verified_at": "2026-11-18T11:12:54+07:00",
+  "responses": [
+    {
+      "method": "GET",
+      "url": "http://localhost:15100/",
+      "expected": 200,
+      "status": 200,
+      "headers": {
+        "Connection": "close",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Wed, 18 Nov 2026 04:12:57 GMT",
+        "Server": "Kestrel",
+        "Transfer-Encoding": "chunked"
+      },
+      "body": "{\"service\":\"Catalog.Api\",\"status\":\"Running\"}"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:15100/api/products",
+      "expected": 200,
+      "status": 200,
+      "headers": {
+        "Connection": "close",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Wed, 18 Nov 2026 04:12:57 GMT",
+        "Server": "Kestrel",
+        "Transfer-Encoding": "chunked"
+      },
+      "body": "[{\"id\":1,\"name\":\"Giao trinh Lap trinh phan tan\",\"description\":\"Giao trinh chinh thuc\",\"price\":150000},{\"id\":2,\"name\":\"Tai lieu RESTful API\",\"description\":\"Huong dan thiet ke API\",\"price\":90000},{\"id\":3,\"name\":\"Bai tap thuc hanh .NET\",\"description\":\"Bo bai tap kem loi giai\",\"price\":120000}]"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:15100/api/products/1",
+      "expected": 200,
+      "status": 200,
+      "headers": {
+        "Connection": "close",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Wed, 18 Nov 2026 04:12:57 GMT",
+        "Server": "Kestrel",
+        "Transfer-Encoding": "chunked"
+      },
+      "body": "{\"id\":1,\"name\":\"Giao trinh Lap trinh phan tan\",\"description\":\"Giao trinh chinh thuc\",\"price\":150000}"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:15100/api/products/999",
+      "expected": 404,
+      "status": 404,
+      "headers": {
+        "Connection": "close",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Wed, 18 Nov 2026 04:12:57 GMT",
+        "Server": "Kestrel",
+        "Transfer-Encoding": "chunked"
+      },
+      "body": "{\"code\":\"PRODUCT_NOT_FOUND\",\"message\":\"Khong tim thay san pham.\"}"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:15100/api/products/abc",
+      "expected": 404,
+      "status": 404,
+      "headers": {
+        "Content-Length": "0",
+        "Connection": "close",
+        "Date": "Wed, 18 Nov 2026 04:12:57 GMT",
+        "Server": "Kestrel"
+      },
+      "body": ""
+    },
+    {
+      "method": "POST",
+      "url": "http://localhost:15100/api/products",
+      "expected": 201,
+      "status": 201,
+      "headers": {
+        "Connection": "close",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Wed, 18 Nov 2026 04:12:57 GMT",
+        "Server": "Kestrel",
+        "Location": "/api/products/4",
+        "Transfer-Encoding": "chunked"
+      },
+      "body": "{\"id\":4,\"name\":\"Lap trinh gRC\",\"description\":\"Tai lieu bai 5\",\"price\":80000}"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:15100/api/products/4",
+      "expected": 200,
+      "status": 200,
+      "headers": {
+        "Connection": "close",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Wed, 18 Nov 2026 04:12:57 GMT",
+        "Server": "Kestrel",
+        "Transfer-Encoding": "chunked"
+      },
+      "body": "{\"id\":4,\"name\":\"Lap trinh gRC\",\"description\":\"Tai lieu bai 5\",\"price\":80000}"
+    },
+    {
+      "method": "POST",
+      "url": "http://localhost:15100/api/products",
+      "expected": 400,
+      "status": 400,
+      "headers": {
+        "Connection": "close",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Wed, 18 Nov 2026 04:12:57 GMT",
+        "Server": "Kestrel",
+        "Transfer-Encoding": "chunked"
+      },
+      "body": "{\"code\":\"INVALID_PRODUCT\",\"message\":\"Ten san pham khong duoc de trong va gia phai lon hon 0\"}"
+    },
+    {
+      "method": "POST",
+      "url": "http://localhost:15100/api/products",
+      "expected": 415,
+      "status": 415,
+      "headers": {
+        "Content-Length": "0",
+        "Connection": "close",
+        "Date": "Wed, 18 Nov 2026 04:12:57 GMT",
+        "Server": "Kestrel"
+      },
+      "body": ""
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:15100/",
+      "expected": 200,
+      "status": 200,
+      "headers": {
+        "Connection": "close",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Wed, 18 Nov 2026 04:12:57 GMT",
+        "Server": "Kestrel",
+        "Transfer-Encoding": "chunked"
+      },
+      "body": "{\"service\":\"Catalog.Api\",\"status\":\"Running\"}"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:15100/api/products",
+      "expected": 200,
+      "status": 200,
+      "headers": {
+        "Connection": "close",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Wed, 18 Nov 2026 04:12:57 GMT",
+        "Server": "Kestrel",
+        "Transfer-Encoding": "chunked"
+      },
+      "body": "[{\"id\":1,\"name\":\"Giao trinh Lap trinh phan tan\",\"description\":\"Giao trinh chinh thuc\",\"price\":150000},{\"id\":2,\"name\":\"Tai lieu RESTful API\",\"description\":\"Huong dan thiet ke API\",\"price\":90000},{\"id\":3,\"name\":\"Bai tap thuc hanh .NET\",\"description\":\"Bo bai tap kem loi giai\",\"price\":120000},{\"id\":4,\"name\":\"Lap trinh gRC\",\"description\":\"Tai lieu bai 5\",\"price\":80000}]"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:15100/api/products/1",
+      "expected": 200,
+      "status": 200,
+      "headers": {
+        "Connection": "close",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Wed, 18 Nov 2026 04:12:57 GMT",
+        "Server": "Kestrel",
+        "Transfer-Encoding": "chunked"
+      },
+      "body": "{\"id\":1,\"name\":\"Giao trinh Lap trinh phan tan\",\"description\":\"Giao trinh chinh thuc\",\"price\":150000}"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:15100/api/products/999",
+      "expected": 404,
+      "status": 404,
+      "headers": {
+        "Connection": "close",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Wed, 18 Nov 2026 04:12:57 GMT",
+        "Server": "Kestrel",
+        "Transfer-Encoding": "chunked"
+      },
+      "body": "{\"code\":\"PRODUCT_NOT_FOUND\",\"message\":\"Khong tim thay san pham.\"}"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:15100/api/products/abc",
+      "expected": 404,
+      "status": 404,
+      "headers": {
+        "Content-Length": "0",
+        "Connection": "close",
+        "Date": "Wed, 18 Nov 2026 04:12:57 GMT",
+        "Server": "Kestrel"
+      },
+      "body": ""
+    },
+    {
+      "method": "POST",
+      "url": "http://localhost:15100/api/products",
+      "expected": 201,
+      "status": 201,
+      "headers": {
+        "Connection": "close",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Wed, 18 Nov 2026 04:12:57 GMT",
+        "Server": "Kestrel",
+        "Location": "/api/products/5",
+        "Transfer-Encoding": "chunked"
+      },
+      "body": "{\"id\":5,\"name\":\"Lap trinh gRC\",\"description\":\"Tai lieu bai 5\",\"price\":80000}"
+    },
+    {
+      "method": "POST",
+      "url": "http://localhost:15100/api/products",
+      "expected": 400,
+      "status": 400,
+      "headers": {
+        "Connection": "close",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Wed, 18 Nov 2026 04:12:57 GMT",
+        "Server": "Kestrel",
+        "Transfer-Encoding": "chunked"
+      },
+      "body": "{\"code\":\"INVALID_PRODUCT\",\"message\":\"Ten san pham khong duoc de trong va gia phai lon hon 0\"}"
+    },
+    {
+      "method": "POST",
+      "url": "http://localhost:15100/api/products",
+      "expected": 415,
+      "status": 415,
+      "headers": {
+        "Content-Length": "0",
+        "Connection": "close",
+        "Date": "Wed, 18 Nov 2026 04:12:57 GMT",
+        "Server": "Kestrel"
+      },
+      "body": ""
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:15100/api/products",
+      "expected": 200,
+      "status": 200,
+      "headers": {
+        "Connection": "close",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Wed, 18 Nov 2026 04:13:08 GMT",
+        "Server": "Kestrel",
+        "Transfer-Encoding": "chunked"
+      },
+      "body": "[{\"id\":1,\"name\":\"Giao trinh Lap trinh phan tan\",\"description\":\"Giao trinh chinh thuc\",\"price\":150000},{\"id\":2,\"name\":\"Tai lieu RESTful API\",\"description\":\"Huong dan thiet ke API\",\"price\":90000},{\"id\":3,\"name\":\"Bai tap thuc hanh .NET\",\"description\":\"Bo bai tap kem loi giai\",\"price\":120000}]"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:15000/",
+      "expected": 200,
+      "status": 200,
+      "headers": {
+        "Connection": "close",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Wed, 18 Nov 2026 04:13:22 GMT",
+        "Server": "Kestrel",
+        "Transfer-Encoding": "chunked"
+      },
+      "body": "{\"service\":\"Submission.Api\",\"status\":\"running\"}"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:15000/api/assignments",
+      "expected": 200,
+      "status": 200,
+      "headers": {
+        "Connection": "close",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Wed, 18 Nov 2026 04:13:22 GMT",
+        "Server": "Kestrel",
+        "Transfer-Encoding": "chunked"
+      },
+      "body": "[{\"id\":1,\"title\":\"Bai tap REST API\",\"description\":\"Thiet ke endpoint RESTful\",\"isOpen\":true},{\"id\":2,\"title\":\"Bai tap Client\",\"description\":\"Viet console client\",\"isOpen\":true},{\"id\":3,\"title\":\"Bai tap da dong\",\"description\":\"Dung de thu ASSIGNMENT_CLOSED\",\"isOpen\":false}]"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:15000/api/assignments/1",
+      "expected": 200,
+      "status": 200,
+      "headers": {
+        "Connection": "close",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Wed, 18 Nov 2026 04:13:22 GMT",
+        "Server": "Kestrel",
+        "Transfer-Encoding": "chunked"
+      },
+      "body": "{\"id\":1,\"title\":\"Bai tap REST API\",\"description\":\"Thiet ke endpoint RESTful\",\"isOpen\":true}"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:15000/api/assignments/999",
+      "expected": 404,
+      "status": 404,
+      "headers": {
+        "Connection": "close",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Wed, 18 Nov 2026 04:13:22 GMT",
+        "Server": "Kestrel",
+        "Transfer-Encoding": "chunked"
+      },
+      "body": "{\"code\":\"ASSIGNMENT_NOT_FOUND\",\"message\":\"Khong tim thay bai tap.\"}"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:15000/api/assignments/abc",
+      "expected": 404,
+      "status": 404,
+      "headers": {
+        "Content-Length": "0",
+        "Connection": "close",
+        "Date": "Wed, 18 Nov 2026 04:13:22 GMT",
+        "Server": "Kestrel"
+      },
+      "body": ""
+    },
+    {
+      "method": "POST",
+      "url": "http://localhost:15000/api/assignments/1/submissions",
+      "expected": 201,
+      "status": 201,
+      "headers": {
+        "Connection": "close",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Wed, 18 Nov 2026 04:13:22 GMT",
+        "Server": "Kestrel",
+        "Location": "/api/submissions/51f7af44-ad62-4708-b383-42bb23dcea7c",
+        "Transfer-Encoding": "chunked"
+      },
+      "body": "{\"id\":\"51f7af44-ad62-4708-b383-42bb23dcea7c\",\"assignmentId\":1,\"studentCode\":\"SV001\",\"repositoryUrl\":\"https://example.com/repo\",\"status\":\"received\",\"receivedAt\":\"2026-11-18T04:13:22.8557484+00:00\"}"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:15000/api/submissions/51f7af44-ad62-4708-b383-42bb23dcea7c",
+      "expected": 200,
+      "status": 200,
+      "headers": {
+        "Connection": "close",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Wed, 18 Nov 2026 04:13:22 GMT",
+        "Server": "Kestrel",
+        "Transfer-Encoding": "chunked"
+      },
+      "body": "{\"id\":\"51f7af44-ad62-4708-b383-42bb23dcea7c\",\"assignmentId\":1,\"studentCode\":\"SV001\",\"repositoryUrl\":\"https://example.com/repo\",\"status\":\"received\",\"receivedAt\":\"2026-11-18T04:13:22.8557484+00:00\"}"
+    },
+    {
+      "method": "POST",
+      "url": "http://localhost:15000/api/assignments/1/submissions",
+      "expected": 400,
+      "status": 400,
+      "headers": {
+        "Connection": "close",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Wed, 18 Nov 2026 04:13:22 GMT",
+        "Server": "Kestrel",
+        "Transfer-Encoding": "chunked"
+      },
+      "body": "{\"code\":\"INVALID_SUBMISSION\",\"message\":\"Thieu ma sinh vien hoac kho ma nguon.\"}"
+    },
+    {
+      "method": "POST",
+      "url": "http://localhost:15000/api/assignments/1/submissions",
+      "expected": 400,
+      "status": 400,
+      "headers": {
+        "Connection": "close",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Wed, 18 Nov 2026 04:13:22 GMT",
+        "Server": "Kestrel",
+        "Transfer-Encoding": "chunked"
+      },
+      "body": "{\"code\":\"INVALID_SUBMISSION\",\"message\":\"Thieu ma sinh vien hoac kho ma nguon.\"}"
+    },
+    {
+      "method": "POST",
+      "url": "http://localhost:15000/api/assignments/3/submissions",
+      "expected": 400,
+      "status": 400,
+      "headers": {
+        "Connection": "close",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Wed, 18 Nov 2026 04:13:22 GMT",
+        "Server": "Kestrel",
+        "Transfer-Encoding": "chunked"
+      },
+      "body": "{\"code\":\"ASSIGNMENT_CLOSED\",\"message\":\"Bai tap da dong.\"}"
+    },
+    {
+      "method": "POST",
+      "url": "http://localhost:15000/api/assignments/999/submissions",
+      "expected": 404,
+      "status": 404,
+      "headers": {
+        "Connection": "close",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Wed, 18 Nov 2026 04:13:22 GMT",
+        "Server": "Kestrel",
+        "Transfer-Encoding": "chunked"
+      },
+      "body": "{\"code\":\"ASSIGNMENT_NOT_FOUND\",\"message\":\"Khong tim thay bai tap.\"}"
+    },
+    {
+      "method": "POST",
+      "url": "http://localhost:15000/api/assignments/1/submissions",
+      "expected": 415,
+      "status": 415,
+      "headers": {
+        "Content-Length": "0",
+        "Connection": "close",
+        "Date": "Wed, 18 Nov 2026 04:13:22 GMT",
+        "Server": "Kestrel"
+      },
+      "body": ""
+    },
+    {
+      "method": "POST",
+      "url": "http://localhost:15000/api/assignments/1/submissions",
+      "expected": 400,
+      "status": 400,
+      "headers": {
+        "Content-Length": "0",
+        "Connection": "close",
+        "Date": "Wed, 18 Nov 2026 04:13:22 GMT",
+        "Server": "Kestrel"
+      },
+      "body": ""
+    },
+    {
+      "method": "PUT",
+      "url": "http://localhost:15000/api/assignments/1",
+      "expected": 405,
+      "status": 405,
+      "headers": {
+        "Content-Length": "0",
+        "Connection": "close",
+        "Date": "Wed, 18 Nov 2026 04:13:22 GMT",
+        "Server": "Kestrel",
+        "Allow": "GET"
+      },
+      "body": ""
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:15000/api/submissions/00000000-0000-0000-0000-000000000000",
+      "expected": 404,
+      "status": 404,
+      "headers": {
+        "Connection": "close",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Wed, 18 Nov 2026 04:13:22 GMT",
+        "Server": "Kestrel",
+        "Transfer-Encoding": "chunked"
+      },
+      "body": "{\"code\":\"SUBMISSION_NOT_FOUND\",\"message\":\"Khong tim thay luot nop.\"}"
+    },
+    {
+      "method": "POST",
+      "url": "http://localhost:15000/api/assignments/1/submissions",
+      "expected": 400,
+      "status": 400,
+      "headers": {
+        "Connection": "close",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Wed, 18 Nov 2026 04:13:22 GMT",
+        "Server": "Kestrel",
+        "Transfer-Encoding": "chunked"
+      },
+      "body": "{\"code\":\"INVALID_SUBMISSION\",\"message\":\"Thieu ma sinh vien hoac kho ma nguon.\"}"
+    },
+    {
+      "method": "POST",
+      "url": "http://localhost:15000/api/assignments/1/submissions",
+      "expected": 400,
+      "status": 400,
+      "headers": {
+        "Connection": "close",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Wed, 18 Nov 2026 04:13:22 GMT",
+        "Server": "Kestrel",
+        "Transfer-Encoding": "chunked"
+      },
+      "body": "{\"code\":\"INVALID_SUBMISSION\",\"message\":\"Thieu ma sinh vien hoac kho ma nguon.\"}"
+    },
+    {
+      "method": "POST",
+      "url": "http://localhost:15000/api/assignments/999/submissions",
+      "expected": 404,
+      "status": 404,
+      "headers": {
+        "Connection": "close",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Wed, 18 Nov 2026 04:13:22 GMT",
+        "Server": "Kestrel",
+        "Transfer-Encoding": "chunked"
+      },
+      "body": "{\"code\":\"ASSIGNMENT_NOT_FOUND\",\"message\":\"Khong tim thay bai tap.\"}"
+    },
+    {
+      "method": "POST",
+      "url": "http://localhost:15000/api/assignments/3/submissions",
+      "expected": 400,
+      "status": 400,
+      "headers": {
+        "Connection": "close",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Wed, 18 Nov 2026 04:13:22 GMT",
+        "Server": "Kestrel",
+        "Transfer-Encoding": "chunked"
+      },
+      "body": "{\"code\":\"ASSIGNMENT_CLOSED\",\"message\":\"Bai tap da dong.\"}"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:15000/api/assignments",
+      "expected": 200,
+      "status": 200,
+      "headers": {
+        "Connection": "close",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Wed, 18 Nov 2026 04:13:22 GMT",
+        "Server": "Kestrel",
+        "Transfer-Encoding": "chunked"
+      },
+      "body": "[{\"id\":1,\"title\":\"Bai tap REST API\",\"description\":\"Thiet ke endpoint RESTful\",\"isOpen\":true},{\"id\":2,\"title\":\"Bai tap Client\",\"description\":\"Viet console client\",\"isOpen\":true},{\"id\":3,\"title\":\"Bai tap da dong\",\"description\":\"Dung de thu ASSIGNMENT_CLOSED\",\"isOpen\":false}]"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:15000/api/assignments/1",
+      "expected": 200,
+      "status": 200,
+      "headers": {
+        "Connection": "close",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Wed, 18 Nov 2026 04:13:22 GMT",
+        "Server": "Kestrel",
+        "Transfer-Encoding": "chunked"
+      },
+      "body": "{\"id\":1,\"title\":\"Bai tap REST API\",\"description\":\"Thiet ke endpoint RESTful\",\"isOpen\":true}"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:15000/api/assignments/999",
+      "expected": 404,
+      "status": 404,
+      "headers": {
+        "Connection": "close",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Wed, 18 Nov 2026 04:13:22 GMT",
+        "Server": "Kestrel",
+        "Transfer-Encoding": "chunked"
+      },
+      "body": "{\"code\":\"ASSIGNMENT_NOT_FOUND\",\"message\":\"Khong tim thay bai tap.\"}"
+    },
+    {
+      "method": "POST",
+      "url": "http://localhost:15000/api/assignments/1/submissions",
+      "expected": 201,
+      "status": 201,
+      "headers": {
+        "Connection": "close",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Wed, 18 Nov 2026 04:13:22 GMT",
+        "Server": "Kestrel",
+        "Location": "/api/submissions/a52e1040-b360-4475-b429-1f5c4f2baa5f",
+        "Transfer-Encoding": "chunked"
+      },
+      "body": "{\"id\":\"a52e1040-b360-4475-b429-1f5c4f2baa5f\",\"assignmentId\":1,\"studentCode\":\"dtc245200682\",\"repositoryUrl\":\"https://github.com/Viet0810/CNTTK23E\",\"status\":\"received\",\"receivedAt\":\"2026-11-18T04:13:23.1501541+00:00\"}"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:15000/api/submissions/a52e1040-b360-4475-b429-1f5c4f2baa5f",
+      "expected": 200,
+      "status": 200,
+      "headers": {
+        "Connection": "close",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Wed, 18 Nov 2026 04:13:22 GMT",
+        "Server": "Kestrel",
+        "Transfer-Encoding": "chunked"
+      },
+      "body": "{\"id\":\"a52e1040-b360-4475-b429-1f5c4f2baa5f\",\"assignmentId\":1,\"studentCode\":\"dtc245200682\",\"repositoryUrl\":\"https://github.com/Viet0810/CNTTK23E\",\"status\":\"received\",\"receivedAt\":\"2026-11-18T04:13:23.1501541+00:00\"}"
+    },
+    {
+      "method": "POST",
+      "url": "http://localhost:15000/api/assignments/1/submissions",
+      "expected": 400,
+      "status": 400,
+      "headers": {
+        "Connection": "close",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Wed, 18 Nov 2026 04:13:22 GMT",
+        "Server": "Kestrel",
+        "Transfer-Encoding": "chunked"
+      },
+      "body": "{\"code\":\"INVALID_SUBMISSION\",\"message\":\"Thieu ma sinh vien hoac kho ma nguon.\"}"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:15000/api/submissions/00000000-0000-0000-0000-000000000000",
+      "expected": 404,
+      "status": 404,
+      "headers": {
+        "Connection": "close",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Wed, 18 Nov 2026 04:13:22 GMT",
+        "Server": "Kestrel",
+        "Transfer-Encoding": "chunked"
+      },
+      "body": "{\"code\":\"SUBMISSION_NOT_FOUND\",\"message\":\"Khong tim thay luot nop.\"}"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:15000/api/assignments",
+      "expected": 200,
+      "status": 200,
+      "headers": {
+        "Connection": "close",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Wed, 18 Nov 2026 04:13:22 GMT",
+        "Server": "Kestrel",
+        "Transfer-Encoding": "chunked"
+      },
+      "body": "[{\"id\":1,\"title\":\"Bai tap REST API\",\"description\":\"Thiet ke endpoint RESTful\",\"isOpen\":true},{\"id\":2,\"title\":\"Bai tap Client\",\"description\":\"Viet console client\",\"isOpen\":true},{\"id\":3,\"title\":\"Bai tap da dong\",\"description\":\"Dung de thu ASSIGNMENT_CLOSED\",\"isOpen\":false}]"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:15000/api/assignments/1",
+      "expected": 200,
+      "status": 200,
+      "headers": {
+        "Connection": "close",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Wed, 18 Nov 2026 04:13:22 GMT",
+        "Server": "Kestrel",
+        "Transfer-Encoding": "chunked"
+      },
+      "body": "{\"id\":1,\"title\":\"Bai tap REST API\",\"description\":\"Thiet ke endpoint RESTful\",\"isOpen\":true}"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:15000/api/assignments/999",
+      "expected": 404,
+      "status": 404,
+      "headers": {
+        "Connection": "close",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Wed, 18 Nov 2026 04:13:22 GMT",
+        "Server": "Kestrel",
+        "Transfer-Encoding": "chunked"
+      },
+      "body": "{\"code\":\"ASSIGNMENT_NOT_FOUND\",\"message\":\"Khong tim thay bai tap.\"}"
+    },
+    {
+      "method": "POST",
+      "url": "http://localhost:15000/api/assignments/1/submissions",
+      "expected": 201,
+      "status": 201,
+      "headers": {
+        "Connection": "close",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Wed, 18 Nov 2026 04:13:22 GMT",
+        "Server": "Kestrel",
+        "Location": "/api/submissions/cd5e0de2-19fb-4112-b4bd-195de795ae6a",
+        "Transfer-Encoding": "chunked"
+      },
+      "body": "{\"id\":\"cd5e0de2-19fb-4112-b4bd-195de795ae6a\",\"assignmentId\":1,\"studentCode\":\"SV001\",\"repositoryUrl\":\"https://example.com/sv001/rest-api\",\"status\":\"received\",\"receivedAt\":\"2026-11-18T04:13:23.2443008+00:00\"}"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:15000/api/submissions/cd5e0de2-19fb-4112-b4bd-195de795ae6a",
+      "expected": 200,
+      "status": 200,
+      "headers": {
+        "Connection": "close",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Wed, 18 Nov 2026 04:13:22 GMT",
+        "Server": "Kestrel",
+        "Transfer-Encoding": "chunked"
+      },
+      "body": "{\"id\":\"cd5e0de2-19fb-4112-b4bd-195de795ae6a\",\"assignmentId\":1,\"studentCode\":\"SV001\",\"repositoryUrl\":\"https://example.com/sv001/rest-api\",\"status\":\"received\",\"receivedAt\":\"2026-11-18T04:13:23.2443008+00:00\"}"
+    },
+    {
+      "method": "POST",
+      "url": "http://localhost:15000/api/assignments/1/submissions",
+      "expected": 400,
+      "status": 400,
+      "headers": {
+        "Connection": "close",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Wed, 18 Nov 2026 04:13:22 GMT",
+        "Server": "Kestrel",
+        "Transfer-Encoding": "chunked"
+      },
+      "body": "{\"code\":\"INVALID_SUBMISSION\",\"message\":\"Thieu ma sinh vien hoac kho ma nguon.\"}"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:15000/api/submissions/00000000-0000-0000-0000-000000000000",
+      "expected": 404,
+      "status": 404,
+      "headers": {
+        "Connection": "close",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Wed, 18 Nov 2026 04:13:22 GMT",
+        "Server": "Kestrel",
+        "Transfer-Encoding": "chunked"
+      },
+      "body": "{\"code\":\"SUBMISSION_NOT_FOUND\",\"message\":\"Khong tim thay luot nop.\"}"
+    },
+    {
+      "method": "POST",
+      "url": "http://localhost:15000/api/assignments/3/submissions",
+      "expected": 400,
+      "status": 400,
+      "headers": {
+        "Connection": "close",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Wed, 18 Nov 2026 04:13:22 GMT",
+        "Server": "Kestrel",
+        "Transfer-Encoding": "chunked"
+      },
+      "body": "{\"code\":\"ASSIGNMENT_CLOSED\",\"message\":\"Bai tap da dong.\"}"
+    },
+    {
+      "method": "POST",
+      "url": "http://localhost:15000/api/assignments/999/submissions",
+      "expected": 404,
+      "status": 404,
+      "headers": {
+        "Connection": "close",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Wed, 18 Nov 2026 04:13:22 GMT",
+        "Server": "Kestrel",
+        "Transfer-Encoding": "chunked"
+      },
+      "body": "{\"code\":\"ASSIGNMENT_NOT_FOUND\",\"message\":\"Khong tim thay bai tap.\"}"
+    },
+    {
+      "method": "POST",
+      "url": "http://localhost:15000/api/assignments/1/submissions",
+      "expected": 415,
+      "status": 415,
+      "headers": {
+        "Content-Length": "0",
+        "Connection": "close",
+        "Date": "Wed, 18 Nov 2026 04:13:23 GMT",
+        "Server": "Kestrel"
+      },
+      "body": ""
+    },
+    {
+      "method": "POST",
+      "url": "http://localhost:15000/api/assignments/1/submissions",
+      "expected": 400,
+      "status": 400,
+      "headers": {
+        "Content-Length": "0",
+        "Connection": "close",
+        "Date": "Wed, 18 Nov 2026 04:13:23 GMT",
+        "Server": "Kestrel"
+      },
+      "body": ""
+    },
+    {
+      "method": "POST",
+      "url": "http://localhost:15000/api/assignments/1/submissions",
+      "expected": 400,
+      "status": 400,
+      "headers": {
+        "Connection": "close",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Wed, 18 Nov 2026 04:13:23 GMT",
+        "Server": "Kestrel",
+        "Transfer-Encoding": "chunked"
+      },
+      "body": "{\"code\":\"INVALID_SUBMISSION\",\"message\":\"Thieu ma sinh vien hoac kho ma nguon.\"}"
+    },
+    {
+      "method": "PUT",
+      "url": "http://localhost:15000/api/assignments/1",
+      "expected": 405,
+      "status": 405,
+      "headers": {
+        "Content-Length": "0",
+        "Connection": "close",
+        "Date": "Wed, 18 Nov 2026 04:13:23 GMT",
+        "Server": "Kestrel",
+        "Allow": "GET"
+      },
+      "body": ""
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:15000/api/assignments/abc",
+      "expected": 404,
+      "status": 404,
+      "headers": {
+        "Content-Length": "0",
+        "Connection": "close",
+        "Date": "Wed, 18 Nov 2026 04:13:23 GMT",
+        "Server": "Kestrel"
+      },
+      "body": ""
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:15000/api/submissions/51f7af44-ad62-4708-b383-42bb23dcea7c",
+      "expected": 404,
+      "status": 404,
+      "headers": {
+        "Connection": "close",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Wed, 18 Nov 2026 04:13:34 GMT",
+        "Server": "Kestrel",
+        "Transfer-Encoding": "chunked"
+      },
+      "body": "{\"code\":\"SUBMISSION_NOT_FOUND\",\"message\":\"Khong tim thay luot nop.\"}"
+    }
+  ]
+}
