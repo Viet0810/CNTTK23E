@@ -12,7 +12,8 @@ stamp = data['verified_at']
 
 def text_file(name):
     raw = (out / name).read_bytes()
-    return raw.decode('utf-16') if raw.startswith(b'\xff\xfe') else raw.decode('utf-8-sig')
+    text = raw.decode('utf-16') if raw.startswith(b'\xff\xfe') else raw.decode('utf-8-sig')
+    return text.replace('\r\n', '\n').replace('\r', '')
 
 def panel(title, content):
     return f'<section><h2>{escape(title)}</h2><pre>{escape(content)}</pre></section>'
@@ -50,7 +51,7 @@ for name, (title, body) in pages.items():
     page.write_text(f'<!doctype html><html lang="vi"><meta charset="utf-8"><title>{escape(title)}</title>'
                     f'<style>{style}</style><h1>{escape(title)}</h1>'
                     f'<p class="meta">Đàm Văn Việt · dtc245200682 · {escape(stamp)}<br>'
-                    'Báo cáo từ log chạy thực tế; dữ liệu gốc được lưu cùng thư mục evidence.</p>' + body + '</html>', encoding='utf-8')
+                    'Báo cáo từ log chạy thực tế; dữ liệu gốc được lưu cùng thư mục evidence.</p>' + body + '</html>', encoding='utf-8', newline='\n')
     if browser:
         height = 400 + 46 * (len(data['responses']) + 1) if name == 'http' else 1600
         result = subprocess.run([str(browser), '--headless', '--disable-gpu', '--no-first-run',

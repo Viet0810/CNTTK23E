@@ -43,7 +43,7 @@ def client(project,base,label):
     assert 'HTTP 201' in result.stdout and 'HTTP 400' in result.stdout,result.stdout
     assert ('INVALID_PRODUCT' if project.name=='Catalog.Client' else 'INVALID_SUBMISSION') in result.stdout
     logs.append('\n'+label+'\n'+result.stdout)
-    (evidence/(label.replace(' ', '-')+'.txt')).write_text(result.stdout,encoding='utf-8')
+    (evidence/(label.replace(' ', '-')+'.txt')).write_text(result.stdout,encoding='utf-8',newline='\n')
 
 def run_http_file(file,base):
     """Execute the checked-in REST Client cases, including named response IDs and JSON files."""
@@ -160,6 +160,6 @@ for kind,folder,port in [('Catalog','CatalogApi',15100),('Submission','RestfulCl
     finally: p.terminate();p.wait(timeout=10)
     failure_client_cases(Path(folder)/'src'/f'{kind}.Client')
 logs.append(f'PASS: {len(responses)} HTTP assertions; 29 checked-in HTTP requests; 4 complete client runs; 2 stopped-API, 2 wrong-port, 10 client error cases; 2 RAM reset checks.')
-(root/'verification-results.txt').write_text('\n'.join(logs),encoding='utf-8')
-(evidence/'http-responses.json').write_text(json.dumps({'verified_at':stamp,'responses':responses},ensure_ascii=False,indent=2),encoding='utf-8')
+(root/'verification-results.txt').write_text('\n'.join(logs),encoding='utf-8',newline='\n')
+(evidence/'http-responses.json').write_text(json.dumps({'verified_at':stamp,'responses':responses},ensure_ascii=False,indent=2),encoding='utf-8',newline='\n')
 print('\n'.join(logs))
